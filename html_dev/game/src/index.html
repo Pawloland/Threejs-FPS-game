@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- <meta charset="UTF-8"> -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<%= htmlWebpackPlugin.options.title %>
+	</title>
+</head>
+
+<body>
+	<div id="root"></div>
+
+	<div id="score">
+		<div id="enemies">
+			<h1>Przeciwnicy: </h1>
+		</div>
+		<div id="player">
+			<h1>Gracz: </h1>
+		</div>
+
+	</div>
+
+	<div id="menu">
+		<div>
+			<label><input type="range" min="-240" value="29" step="1" max="1000" id="camera_height">wysokość kamery nad ziemią</label>
+			<label><input type="range" min="-1" value="-0.05" step="0.01" max="1" id="camera_tilt">kąt nachylenia kamery x</label>
+			<label><input type="range" min="-500" value="-83" step="1" max="500" id="camera_distance">odległość kamery od postaci</label>
+		</div>
+		<div>
+			<label><input type="range" min="-1" value="0" step="0.01" max="1" id="camera_swivel">kąt widzenia kamery y</label>
+			<label><input type="range" min="1" value="75" step="1" max="179" id="camera_fov">fov kamery</label>
+			<label><input type="range" min="0" value="1.57" step="0.01" max="3" id="lights_intensity">moc świateł</label>
+		</div>
+		<div>
+			<label><input type="checkbox" id="shadows">cienie</label>
+			<label><input type="checkbox" id="top_view">widok z góry</label>
+			<label><input type="checkbox" id="camera_following_player">kamera za playerem</label>
+			<button onclick="alert(' Paused')">Pause</button>
+		</div>
+		<div>
+			<label><input type="range" min="1" step="0.1" max="100" value="1" id="fire_height_y">wysokość ognia y</label>
+			<label><input type="range" min="1" step="0.1" max="100" value="1" id="fire_width_x">szerokośc ognia x</label>
+			<!-- <label><input type="range" min="1" step="0.1" max="100" value="1" id="fire_depth_z" disabled>głębokość ognia z</label> -->
+		</div>
+		<div>
+			<label><input type="range" min="0" step="0.1" max="10" value="4.8" id="shake_magnitude">rozrzut lasera</label>
+			<label><input type="range" min="1" step="0.1" max="30" value="5.2" id="laser_scale">skala lasera</label>
+		</div>
+	</div>
+</body>
+
+</html>

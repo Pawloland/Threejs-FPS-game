@@ -1,0 +1,135 @@
+* {
+    font-family: consolas, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#left {
+    width: calc((100% - 170px) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+#table_wrapper_first {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+#table_wrapper_second {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+td {
+    /* box-sizing: border-box; */
+    border: 1px solid black;
+    /* width:10%;
+    padding-bottom: 10%; */
+    /* display: inline-block; */
+    cursor: pointer;
+}
+ 
+
+#center {
+    width: 170px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+button {
+    width: 100%;
+    min-height: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.fg_white {
+    color: white;
+}
+
+.fg_black {
+    color: black;
+}
+
+.bg_black {
+    background-color: black;
+}
+
+/* .bg_black.active {
+    border: 4px solid grey;
+} */
+
+.bg_green {
+    background-color: lime;
+}
+
+.bg_red {
+    background-color: red;
+}
+
+.bg_blue {
+    background-color: blue;
+}
+
+.bg_yellow {
+    background-color: yellow;
+}
+
+.bg_white {
+    background-color: white;
+}
+
+.bg_green.active,
+.bg_red.active,  
+.bg_blue.active,  
+.bg_yellow.active,  
+.bg_white.active {
+    border: 4px solid black;
+}
+
+
+
+#right {
+    width: calc((100% - 170px) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#data {
+    max-width: 500px;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: pre;
+}

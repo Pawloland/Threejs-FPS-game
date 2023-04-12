@@ -1,0 +1,110 @@
+body {
+    font-family: consolas, sans-serif;
+    margin: 0 ;
+    overflow: hidden;
+    color:white;
+}
+
+#score {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#enemies{
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#player{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.enemy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.player_wrapper {
+    margin-top: 10px;
+}
+
+.enemy_img , .enemy_heart_img {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.enemy_hearts{
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+.player_ammo{
+    display: inline-block;
+    width: 500px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.player_hearts {
+    display: inline-block;
+    width: 500px;
+}
+
+.player_ammo_img{
+    display: inline-block;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 2px;
+} 
+
+.player_heart_img {
+    display: inline-block;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+#menu {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#menu div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    /* flex-basis: 100%; */
+}

@@ -1,0 +1,8 @@
+/html_dev/*/node_modules
+/html_dev/*/package-lock.json
+/html_dev/*/dist
+/kotlin_dev/.idea
+/kotlin_dev/target
+/kotlin_dev/*.iml
+kotlin_dev/src/main/resources/public/*/*
+!kotlin_dev/src/main/resources/public/*/.gitkeep

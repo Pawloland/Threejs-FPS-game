@@ -1,12 +1,12 @@
 package sparkserver
 
+// import spark.kotlin.get
+// import spark.kotlin.*
 import com.google.gson.Gson
 import spark.Spark.*
-//import spark.kotlin.get
-import spark.kotlin.*
 import java.sql.DriverManager
 
-//import spark.kotlin.post
+// import spark.kotlin.post
 
 fun main() {
     /**
@@ -14,25 +14,30 @@ fun main() {
      *  */
 
     val levelService = LevelService()
+    port(5000)
 
-    spark.kotlin.port(5000)
     staticFileLocation("/public")
 
-    get("/") {
-        response.type("text/html")
-        response.redirect("/main_page/index.html")
+    get("/favicon.ico") { _, res ->
+        res.type("image/png")
+        res.redirect("/game_page/favicon.png")
     }
 
-    get("/game") {
-        response.type("text/html")
-        response.redirect("/game/index.html")
-    }
-    get("/editor") {
-        response.type("text/html")
-        response.redirect("/editor/index.html")
+    get("/") { _, res ->
+        res.type("text/html")
+        res.redirect("/main_page/index.html")
     }
 
-    post("/add") {req, res ->
+    get("/game") { _, res ->
+        res.type("text/html")
+        res.redirect("/game_page/index.html")
+    }
+    get("/editor") { _, res ->
+        res.type("text/html")
+        res.redirect("/editor_page/index.html")
+    }
+
+    post("/add") { req, _ ->
 
         println(req.body())
         val levels: Array<LevelItem> = Gson().fromJson(req.body(), Array<LevelItem>::class.java )?: arrayOf<LevelItem>()
@@ -41,19 +46,19 @@ fun main() {
 
     } // dodanie danych levelu
 
-    options("/*") { request, response ->
-        val accessControlRequestHeaders = request
+    options("/*") { req, res ->
+        val accessControlRequestHeaders = req
             .headers("Access-Control-Request-Headers")
         if (accessControlRequestHeaders != null) {
-            response.header(
+            res.header(
                 "Access-Control-Allow-Headers",
                 accessControlRequestHeaders
             )
         }
-        val accessControlRequestMethod = request
+        val accessControlRequestMethod = req
             .headers("Access-Control-Request-Method")
         if (accessControlRequestMethod != null) {
-            response.header(
+            res.header(
                 "Access-Control-Allow-Methods",
                 accessControlRequestMethod
             )
@@ -61,9 +66,9 @@ fun main() {
         "OK"
     }
 
-    before({ request, response -> response.header("Access-Control-Allow-Origin", "*") })
+    before({ _, res -> res.header("Access-Control-Allow-Origin", "*") })
 
-    post("/insertToDatabase") { req, res ->
+    post("/insertToDatabase") { req, _ ->
         try {
 
         val conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/fps", "postgres", "postgres")
@@ -84,8 +89,8 @@ fun main() {
 
     } // dodanie jakichś danych do postgresa
 
-    get("/load") {
-        response.type("application/json")
+    get("/load") { _, res ->
+        res.type("application/json")
         println(Gson().toJson(levelService.getItems()))
         Gson().toJson(levelService.getItems())
 //        """

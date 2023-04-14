@@ -1,7 +1,7 @@
 export default class Database {
 
     static async saveToDB(left_ammo, left_hearts) {
-        const response = await fetch('http://localhost:5000/insertToDatabase', {
+        const response = await fetch('/insertToDatabase', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -14,7 +14,7 @@ export default class Database {
     }
 
     static async getLevel() {
-        const response = await fetch('http://localhost:5000/load', {
+        const response = await fetch('/load', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',

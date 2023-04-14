@@ -40,7 +40,7 @@ export default class Grid {
         this.texture_surface = new THREE.TextureLoader().load(terrain)
 
         // this.texture_surface = new THREE.TextureLoader().load('https://i.pinimg.com/originals/82/61/b9/8261b9e64d7cf547c0bf3878a625b955.jpg')
-        // this.texture_surface = new THREE.TextureLoader().load('http://localhost:3000/img/surface_texture.png')
+        // this.texture_surface = new THREE.TextureLoader().load('/img/surface_texture.png')
         this.texture_surface.wrapS = THREE.RepeatWrapping;
         this.texture_surface.wrapT = THREE.RepeatWrapping;
         this.texture_surface.minFilter = THREE.NearestFilter
